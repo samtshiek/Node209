@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<body>
+    <ul>
+        <% moviesRef.forEach((movie)=> { %>
+            <li>
+                <h2>
+                    <%= movie.title %>
+                </h2>
+                <p>
+                    <%= movie.year %>
+                </p>
+            </li>
+            <hr />
+        <% }) %>
+    </ul>
+</body>
+<%- include('../partials/footer') %>

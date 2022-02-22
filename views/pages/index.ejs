@@ -1,0 +1,8 @@
+<%- include('../partials/head') %>
+
+<h2>Hi <%= user.firstName + " " + user.lastName  %></h2>
+<% if (user.admin) { %>
+    <p>Let me tell you a secret: <b>I am an admin</b></p>
+<% } %>
+
+<%- include('../partials/footer') %>

@@ -1,23 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-var myArray = [];
-
-function Car(model, make) {
-  this.model = model;
-  this.make = make;
-}
-
-myArray.push(new Car("RE-45", "Mazda"))
-myArray.push(new Car("R7-25", "BronKlin"))
-
-const Servermovies = [
-  {title: 'Wild At Heart', year: '1993', type: 'Action' },
-  {title: 'Moonstruck', year: '1994', type: 'Romance' },
-  {title: 'Raising Arizona', year: '1995', type: 'Comedy' }
+const ServerAuctionItems = [
+  {title: 'Philosopher in meditation', artist: 'Rembrandt', year: '1993', price: 11450000, type: 'Painting' },
+  {title: 'Guennol Lioness', artist: 'unknown', year: '5000 B.C.', price: 57000000, type: 'Sculpture' },
+  {title: 'La Terrace Ã Sainte-Adresse', artist: 'Claude Monet', year: '1867', price: 11500, type: 'Painting' }
 ]
 
-console.log(Servermovies);
+console.log(ServerAuctionItems);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/GetAllData', function(req, res) {
-  res.status(200).json(Servermovies);
+  res.status(200).json(ServerAuctionItems);
 });
 
 

@@ -43,9 +43,8 @@ function createList() {
     // clear prior data
     $.get('/GetAllData', function(data, status) {
         auctionItemArray = data;
-    })
 
-    var myul = document.getElementById("myList");
+        var myul = document.getElementById("myList");
     myul.innerHTML = '';
 
     auctionItemArray.forEach(function (element,) {   // use handy array forEach method
@@ -53,5 +52,6 @@ function createList() {
         li.innerHTML = "$" + element.price + " Art type: " + element.type + " <cite>" + element.title + "</cite>, created by Artist: " + element.artist + " in year " + element.year;
         myul.appendChild(li);
     });
+    })
 };
 

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const ServerAuctionItems = [
-  {title: 'Philosopher in meditation', artist: 'Rembrandt', year: '1993', price: 11450000, type: 'Painting' },
+  {title: 'Philosopher in meditation', artist: 'Rembrandt', year: '1632', price: 11450000, type: 'Painting' },
   {title: 'Guennol Lioness', artist: 'unknown', year: '5000 B.C.', price: 57000000, type: 'Sculpture' },
   {title: 'La Terrace Ã Sainte-Adresse', artist: 'Claude Monet', year: '1867', price: 11500, type: 'Painting' }
 ]

@@ -3,12 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>movies</title>
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Art Auction</title>
+    <link rel="stylesheet" href="stylesheets/themes/art-auction.min.css" />
+    <link rel="stylesheet" href="stylesheets/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
     <script src="javascripts/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
 
 </head>
 
@@ -19,11 +21,10 @@
 <!-- ================================================================================ -->
 <div data-role="page" id="home">
     <!-- header -->
-    <div data-role="header" data-theme='b'>
-        <div data-role="navbar" data-theme='b'>
+    <div data-role="header" data-theme="a">
+        <div data-role="navbar" data-theme="a">
             <ul>
                 <li><a href="#add">Add Auction Item</a></li>
-                <li><a href="#details">Auction Item Detail</a></li>
                 <li><a href="#list">Auction Items</a></li>
             </ul>
         </div><!-- /navbar -->
@@ -33,16 +34,20 @@
 
 
     <!-- content -->
-    <div data-role="content" data-theme='e' style="text-align: center;">
+    <div data-role="content" data-theme="a" style="text-align: center;">
         <p>This art auction site, displays auction items, respective details, and allows the addition and removal of auction items.</p>
+    </div>
+
+    <div data-role="content" data-theme="a" style="text-align: center;">
+        <img style="width: 20%; height: 20%; border: 4px solid brown;" src="images/auction-poster.jpg">
     </div>
 
 
 
 
     <!-- notes footer -->
-    <div data-role="footer" data-theme='b'>
-        <h3>Copyrigtht 2021 by Kurt Friedrich</h3>
+    <div data-role="footer" data-theme="a">
+        <h3>Copyright 2021 by Samuel Kamanda</h3>
     </div>
 </div>
 
@@ -52,11 +57,10 @@
 
 <div data-role="page" id="add">
     <!-- header -->
-    <div data-role="header" data-theme='b'>
-        <div data-role="navbar" data-theme='b'>
+    <div data-role="header" data-theme="a">
+        <div data-role="navbar" data-theme="a">
             <ul>
                 <li><a href="#home">Home Page</a></li>
-                <li><a href="#details">Auction Item Detail</a></li>
                 <li><a href="#list">Auction Items</a></li>
             </ul>
         </div><!-- /navbar -->
@@ -66,7 +70,7 @@
 
 
     <!-- content -->
-    <div data-role="content" data-theme='e'>
+    <div data-role="content" data-theme="a">
         Enter Art title <br />
         <input type="text" value="" id="artTitle" />
         Enter Artist <br />
@@ -89,8 +93,8 @@
 
 
     <!-- notes footer -->
-    <div data-role="footer" data-theme='b'>
-        <h3>Copyrigtht 2021 by Kurt Friedrich</h3>
+    <div data-role="footer" data-theme="a">
+        <h3>Copyright 2021 by Samuel Kamanda</h3>
     </div>
 </div>
 
@@ -101,12 +105,12 @@
 <div data-role="page" id="list">
   
     <!-- header -->
-    <div data-role="header" data-theme='b'>
-        <div data-role="navbar" data-theme='b'>
+    <div data-role="header" data-theme="a">
+        <div data-role="navbar" data-theme="a">
             <ul>
                 <li><a href="#home">Home Page</a></li>
                 <li><a href="#add">Add Auction Item</a></li>
-                <li><a href="#details">Auction Item Detail</a></li>
+                
                
             </ul>
         </div><!-- /navbar -->
@@ -116,7 +120,7 @@
 
 
     <!-- content -->
-    <div data-role="content" data-theme='e'>
+    <div data-role="content" data-theme="a">
 
     <p>This page lists available auction items.</p>
         <ul id="myList"></ul>
@@ -125,8 +129,8 @@
 
     
     <!-- notes footer -->
-    <div data-role="footer" data-theme='b'>
-        <h3>Copyrigtht 2021 by Kurt Friedrich</h3>
+    <div data-role="footer" data-theme="a">
+        <h3>Copyright 2021 by Samuel Kamanda</h3>
     </div>
 </div>
 
@@ -137,8 +141,8 @@
 <div data-role="page" id="details">
   
     <!-- header -->
-    <div data-role="header" data-theme='b'>
-        <div data-role="navbar" data-theme='b'>
+    <div data-role="header" data-theme="a">
+        <div data-role="navbar" data-theme="a">
             <ul>
                 <li><a href="#home">Home Page</a></li>
                 <li><a href="#add">Add Auction Item</a></li>
@@ -151,8 +155,9 @@
 
 
     <!-- content -->
-    <div data-role="content" data-theme='e'>
+    <div data-role="content" data-theme="a">
 
+    <p id="test">Just a test</p>
     <p>This page displays additional information about the auction and the option to remove it from auction item list.</p>
         <ul id="myList"></ul>
     </div>
@@ -160,8 +165,8 @@
 
     
     <!-- notes footer -->
-    <div data-role="footer" data-theme='b'>
-        <h3>Copyrigtht 2021 by Kurt Friedrich</h3>
+    <div data-role="footer" data-theme="a">
+        <h3>Copyright 2021 by Samuel Kamanda</h3>
     </div>
 </div>
 

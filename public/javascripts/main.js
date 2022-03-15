@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("artist").value = "";
         document.getElementById("artYear").value = "";
         document.getElementById("artPrice").value = "";
+        
     });
 
     $(document).bind("change", "#select-type", function (event, ui) {
@@ -31,6 +32,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // page before show code *************************************************************************
     $(document).on("pagebeforeshow", "#list", function (event) {   
         createList();
+    });
+
+    $(document).on("pagebeforeshow", "#details", function (event) {   
+        let AuctionItemTitle = localStorage.getItem("param");
+        document.getElementById("test").innerHTML = AuctionItemTitle;
     });
     
 
@@ -49,9 +55,23 @@ function createList() {
 
     auctionItemArray.forEach(function (element,) {   // use handy array forEach method
         var li = document.createElement('li');
+        li.classList.add("AuctionList");
         li.innerHTML = "$" + element.price + " Art type: " + element.type + " <cite>" + element.title + "</cite>, created by Artist: " + element.artist + " in year " + element.year;
+        li.setAttribute("data-param", element.title);
         myul.appendChild(li);
     });
+
+    var auctionElements = document.getElementsByClassName("AuctionList");
+    var auctionElementArray = Array.from(auctionElements);
+    auctionElementArray.forEach(function(element,i) {
+        element.addEventListener('click', function() {
+            alert("Click on list # " + (i+1));
+            var param = this.getAttribute("data-param");
+            localStorage.setItem("param", param);
+            document.location.href = "index.html#details";
+        });
+    });
+
     })
 };
 

@@ -53,5 +53,30 @@ router.post('/postData', function(req, res) {
   console.log("Array after post: " + ServerAuctionItems);
 })
 
+router.delete('/deleteData/:title', (req, res) => {
+  let title = req.params.title;
+  let found = false;
+
+  for (var i = 0; i < ServerAuctionItems.length; i++) {
+    if(ServerAuctionItems[i].title == title) {
+      ServerAuctionItems.splice(i, 1);
+
+      found = true;
+      fileManager.write();
+      break;
+    }
+  }
+
+  if (found) {
+   return res.send("Found title: " + title );
+  }
+  else {
+    res.status(500).json({
+      status: error
+    });
+  }
+
+});
+
 
 module.exports = router;

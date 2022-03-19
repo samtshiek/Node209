@@ -35,7 +35,7 @@
 
     <!-- content -->
     <div data-role="content" data-theme="a" style="text-align: center;">
-        <p>This art auction site, displays auction items, respective details, and allows the addition of auction items.</p>
+        <p>This art auction site, displays auction items, respective details, and allows the addition and deletion of auction items.</p>
     </div>
 
     <div data-role="content" data-theme="a" style="text-align: center;">
@@ -157,9 +157,15 @@
     <!-- content -->
     <div data-role="content" data-theme="a">
 
-    <p id="test">Just a test</p>
-    <p>This page displays additional information about the auction and the option to remove it from auction item list.</p>
-        <ul id="myList"></ul>
+    <div style="text-align: center;">
+        <p>This page displays additional information about the auction and the option to remove it from auction item list.</p>
+        <cite><h1 id="Title"></h1></cite>
+        <p>Type: <b id="Type"></b></p>
+        <p>Artist: <b id="Artist"></b></p>
+        <p>Price: $<b id="Price"></b></p>
+        <p>Year: <b id="Year"></b></p>
+
+        <input type="button" value="Click To Delete art from Auction" id="buttonDelete" />
     </div>
 
 

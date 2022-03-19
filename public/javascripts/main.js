@@ -47,14 +47,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
         selectedType = document.getElementById("select-type").value;
     });
 
+    document.getElementById("buttonDelete").addEventListener("click", function () {
+        let dataToDelete = localStorage.getItem("title");
+
+        $.ajax({
+            url: '/deleteData/' + dataToDelete,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+    
+            success: function (result) {
+                alert(result + " deleted");
+    
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+            
+        });
+
+    });
+
+
     // page before show code *************************************************************************
     $(document).on("pagebeforeshow", "#list", function (event) {   
         createList();
     });
 
     $(document).on("pagebeforeshow", "#details", function (event) {   
-        let AuctionItemTitle = localStorage.getItem("param");
-        document.getElementById("test").innerHTML = AuctionItemTitle;
+        let AuctionItemTitle = localStorage.getItem("title");
+        let AuctionItemType = localStorage.getItem("type");
+        let AuctionItemArtist = localStorage.getItem("artist");
+        let AuctionItemPrice = localStorage.getItem("price");
+        let AuctionItemYear = localStorage.getItem("year");
+        document.getElementById("Title").innerHTML = AuctionItemTitle;
+        document.getElementById("Type").innerHTML = AuctionItemType;
+        document.getElementById("Artist").innerHTML = AuctionItemArtist;
+        document.getElementById("Price").innerHTML = AuctionItemPrice;
+        document.getElementById("Year").innerHTML = AuctionItemYear;
     });
     
 
@@ -75,8 +104,12 @@ function createList() {
         var li = document.createElement('li');
         li.classList.add("AuctionList");
         console.log("ForEach element: " + element);
-        li.innerHTML = "$" + element.price + " Art type: " + element.type + " <cite>" + element.title + "</cite>, created by Artist: " + element.artist + " in year " + element.year;
-        li.setAttribute("data-param", element.title);
+        li.innerHTML = "Art type: " + element.type + " <cite>" + element.title + "</cite>, created by Artist: " + element.artist;
+        li.setAttribute("attr-price", element.price);
+        li.setAttribute("attr-type", element.type);
+        li.setAttribute("attr-title", element.title);
+        li.setAttribute("attr-artist", element.artist);
+        li.setAttribute("attr-year", element.year);
         myul.appendChild(li);
     });
 
@@ -85,8 +118,16 @@ function createList() {
     auctionElementArray.forEach(function(element,i) {
         element.addEventListener('click', function() {
             alert("Clicked on list # " + (i+1));
-            var param = this.getAttribute("data-param");
-            localStorage.setItem("param", param);
+            var price = this.getAttribute("attr-price");
+            var type = this.getAttribute("attr-type");
+            var title = this.getAttribute("attr-title");
+            var artist = this.getAttribute("attr-artist");
+            var year = this.getAttribute("attr-year");
+            localStorage.setItem("price", price);
+            localStorage.setItem("type", type);
+            localStorage.setItem("title", title);
+            localStorage.setItem("artist", artist);
+            localStorage.setItem("year", year);
             document.location.href = "index.html#details";
         });
     });
